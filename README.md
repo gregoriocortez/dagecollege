@@ -1,2 +1,2 @@
 # dagecollege
-this is a college website
+website made for college purposes
