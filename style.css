@@ -137,6 +137,7 @@ header {
 }
 
 .nav-links {
+    list-style: none;
     display: flex;
     gap: 30px;
 }
@@ -167,6 +168,16 @@ header {
     width: 100%;
     left: 0;
     background: var(--primary-color);
+}
+
+/* menu toggle button(hidden on desktop)*/
+.menu-toggle{
+    display:none;
+    font-size: 1.8rem;
+    color:var(--white-color);
+    background:var(--dark-color);
+    border:none;
+    cursor: pointer;
 }
 
 /* Hero Section */
@@ -906,8 +917,45 @@ footer {
 }
 
 /* --- Media Queries for Responsiveness --- */
+.menu-toggle {
+  display: block;
+  font-size: 24px;
+  cursor: pointer;
+}
 
+.nav-links {
+  display: none; /* hidden by default */
+  flex-direction: column;
+  background: var(--dark-color);
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 200px;
+  padding: 15px;
+}
+
+.nav-links.active {
+  display: flex;
+}
 /* For screens smaller than 992px (e.g., tablets) */
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+ }
+}
+
 @media (max-width: 992px) {
     h1 { font-size: 3.5rem; }
     h2 { font-size: 2.5rem; }
