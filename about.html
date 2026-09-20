@@ -3,159 +3,1342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAGE COLLEGE</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>About DAGE College</title>
+    <meta name="description" content="Learn about DAGE College, our history, founder, goals, vision and mission.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #08080d;
+            --bg-soft: #101017;
+            --card: rgba(255,255,255,0.055);
+            --card-border: rgba(255,255,255,0.10);
+            --white: #ffffff;
+            --text: #e9e9ee;
+            --muted: #a5a5b0;
+            --red: #e4113e;
+            --pink: #ff0783;
+            --gradient: linear-gradient(135deg, #e4113e, #ff0783);
+            --container: 1180px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(228,17,62,0.12), transparent 28%),
+                radial-gradient(circle at 90% 30%, rgba(255,7,131,0.08), transparent 25%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(92%, var(--container));
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8,8,13,0.78);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .header-content {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            position: relative;
+            font-size: 1.65rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: var(--white);
+        }
+
+        .logo::after {
+            content: "";
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--pink);
+            right: -12px;
+            bottom: 6px;
+            box-shadow: 0 0 15px rgba(255,7,131,0.8);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            position: relative;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #c9c9d1;
+            transition: 0.3s ease;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--white);
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        .nav-portal {
+            padding: 10px 18px;
+            border-radius: 30px;
+            background: var(--gradient);
+            color: white !important;
+            box-shadow: 0 8px 25px rgba(228,17,62,0.22);
+        }
+
+        .nav-portal::after {
+            display: none;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .about-hero {
+            min-height: 78vh;
+            padding: 150px 0 90px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            right: -180px;
+            top: 50px;
+            border-radius: 50%;
+            background: rgba(255,7,131,0.08);
+            filter: blur(100px);
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: #ff5c9f;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .eyebrow span {
+            width: 30px;
+            height: 1px;
+            background: var(--pink);
+        }
+
+        .about-hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(3rem, 7vw, 6.2rem);
+            line-height: 0.98;
+            color: var(--white);
+            margin-bottom: 28px;
+            letter-spacing: -2px;
+        }
+
+        .about-hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .about-hero p {
+            max-width: 700px;
+            font-size: 1.08rem;
+            color: var(--muted);
+        }
+
+        .hero-line {
+            width: 80px;
+            height: 4px;
+            border-radius: 10px;
+            background: var(--gradient);
+            margin-top: 35px;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            padding: 95px 0;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            line-height: 1.1;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        .section-number {
+            display: block;
+            color: #ff4f97;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           ABOUT INTRO
+        ========================== */
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .intro-text p {
+            color: #b9b9c3;
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+
+        .image-card {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+            background: var(--card);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+        }
+
+        .image-card img {
+            height: 480px;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .image-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.42),
+                transparent 45%
+            );
+            pointer-events: none;
+        }
+
+        /* =========================
+           FOUNDER
+        ========================== */
+
+        .founder-section {
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(228,17,62,0.035),
+                    transparent 50%
+                );
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .founder-image {
+            order: 1;
+        }
+
+        .founder-text {
+            order: 2;
+        }
+
+        .founder-image .image-card img {
+            height: 560px;
+        }
+
+        .founder-text h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 2.4rem;
+            color: var(--white);
+            margin-bottom: 18px;
+        }
+
+        .founder-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .founder-tag {
+            display: inline-flex;
+            margin-top: 10px;
+            padding: 9px 16px;
+            border: 1px solid rgba(255,7,131,0.25);
+            border-radius: 30px;
+            color: #ff73ad;
+            background: rgba(255,7,131,0.05);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* =========================
+           HISTORY
+        ========================== */
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .history-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .history-image .image-card img {
+            height: 520px;
+        }
+
+        /* =========================
+           VALUES / GOALS
+        ========================== */
+
+        .goals-section {
+            background: rgba(255,255,255,0.018);
+        }
+
+        .goals-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .goals-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .goals-image .image-card img {
+            height: 500px;
+        }
+
+        /* =========================
+           DREAMS
+        ========================== */
+
+        .dreams-section {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+
+        .dreams-box {
+            position: relative;
+            min-height: 530px;
+            border-radius: 32px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+            background: #111118;
+        }
+
+        .dreams-box img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .dreams-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,9,0.95) 0%,
+                    rgba(5,5,9,0.72) 45%,
+                    rgba(5,5,9,0.22) 100%
+                );
+        }
+
+        .dreams-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            padding: 75px;
+        }
+
+        .dreams-content h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .dreams-content p {
+            color: #d0d0d8;
+            font-size: 1.05rem;
+        }
+
+        /* =========================
+           VISION & MISSION
+        ========================== */
+
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .info-card {
+            padding: 42px;
+            min-height: 100%;
+            border-radius: 25px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(255,7,131,0.28);
+        }
+
+        .info-icon {
+            width: 58px;
+            height: 58px;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            background: var(--gradient);
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            box-shadow: 0 12px 30px rgba(228,17,62,0.18);
+        }
+
+        .info-card h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 18px;
+        }
+
+        .info-card p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .about-cta {
+            padding: 110px 0;
+        }
+
+        .cta-box {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 75px 30px;
+            border-radius: 32px;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(255,7,131,0.25), transparent 55%),
+                linear-gradient(135deg, rgba(228,17,62,0.18), rgba(255,7,131,0.07));
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .cta-box h2 {
+            font-family: "Playfair Display", serif;
+            color: white;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            max-width: 620px;
+            margin: 0 auto 30px;
+            color: #bdbdc7;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 25px;
+            border-radius: 30px;
+            background: var(--gradient);
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 12px 30px rgba(228,17,62,0.22);
+            transition: 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(255,7,131,0.25);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            background: #06060a;
+            padding-top: 70px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.8fr 1.2fr 0.8fr;
+            gap: 45px;
+            padding-bottom: 55px;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.6rem;
+            letter-spacing: 3px;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: #858591;
+            font-size: 0.88rem;
+            margin-bottom: 9px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            transition: 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff4f97;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-socials a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #aaaab4;
+        }
+
+        .footer-socials a:hover {
+            background: var(--gradient);
+            border-color: transparent;
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding: 22px 0;
+        }
+
+        .footer-bottom-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            color: #65656f;
+            font-size: 0.78rem;
+        }
+
+        /* =========================
+           REVEAL ANIMATION
+        ========================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            animation: reveal 0.8s ease forwards;
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 950px) {
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 0.78rem;
+            }
+
+            .intro-grid,
+            .founder-grid,
+            .history-grid,
+            .goals-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .founder-image {
+                order: 1;
+            }
+
+            .founder-text {
+                order: 2;
+            }
+
+            .vision-mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 720px) {
+
+            .header-content {
+                min-height: 68px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .about-hero {
+                min-height: auto;
+                padding: 135px 0 75px;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .image-card img,
+            .founder-image .image-card img,
+            .history-image .image-card img,
+            .goals-image .image-card img {
+                height: 390px;
+            }
+
+            .dreams-box {
+                min-height: 600px;
+            }
+
+            .dreams-content {
+                padding: 45px 30px;
+            }
+
+            .dreams-overlay {
+                background:
+                    linear-gradient(
+                        to top,
+                        rgba(5,5,9,0.95),
+                        rgba(5,5,9,0.45)
+                    );
+            }
+
+            .info-card {
+                padding: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <header>
-        <div class="container header-content">
-            <a href="index.html" class="logo">DAGE</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#About">About College</a></li>
-                    <li><a href="#Founder">Founder</a></li>
-                    <li><a href="#Goals">Goals</a></li>
-                    <li><a href="#Dreams">Dreams</a></li>
-                    <li><a href="#History">History</a></li>
-                    <li><a href="#Vision">Vision</a></li>
-                    <li><a href="#Mission">Mission</a></li>
-                    <li><a href="courses.html">Courses & Hostel</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        
-        <section id="About" class="About-section container">
-            <h2>About College</h2>
-            <div class="About-grid">
-                <div class="About-text">
-                    <p>Who are we?</p>
-<p>The word DAGE is an abbreviation of the English word with the meaning "Development acquired general education", meaning "Development obtained through the main way of education". </p>
-    <p>This beauty academy DAGE was established in 2012 and registered with VETA with registration number REG/NACTVET/0502. beauty, The main goal of this woman was to help young girls who live in difficult environments, who do not know what to do to fulfill their dreams. Our college has teachers and trainers who specialize in various fields of beauty, decorating, entrepreneurship and life skills as well as computer teachers</p>
-                </div>
-                <div class="About-image">
-                    <img src="image1.jpg" alt="college students">
-                </div>
-            </div>
-        </section>
-        
-        <section id="Founder" class="Founder-section container">
-            <h2>Founder</h2>
-            <div class="Founder-grid">
-                <div class="Founder-text">
-                   <P>Ms. Genoveva Kiliba an entrepreneur born on 31/05/1965 is the visionary founder of DAGE COLLEGE, established in the year 2012. Driven by a passion for education and community development, Ms. Genoveva Kiliba laid the foundation for an institution dedicated to academic excellence, innovation, and student empowerment. Through her leadership and commitment, the college has grown into a respected center of learning, inspiring generations to achieve their full potential. Realizing that this is something that she most likely love she decided to share it to the world by giving people an opportunity to learn and understand the beauty of arts & crafts in cosmetology, decor, bakery & culinary etc.</P>
-                </div>
-                <div class="Founder-image">
-                    <img src="founder.jpg" alt="founder">
-                </div>
-            </div>
-        </section>
+<header>
+    <div class="container header-content">
 
-          <section id="Goals" class="Goals-section container">
-            <h2>Goals</h2>
-            <div class="Goals-grid">
-                <div class="Goals-text">
-                <p>DAGE College is focused on nurturing creativity, preserve traditional skills, and promote innovation in visual and applied arts. Its core goals include providing hands-on education that blends technical proficiency with artistic expression, encouraging students to explore their unique voices through various media such as cosmetology, decor, baking & culinary arts, and more.</p>
-                <p>The college strives to foster a supportive environment where students can develop critical thinking, aesthetic sensitivity, and a deep understanding of cultural heritage. It also seeks to build strong connections between contemporary practices and traditional craftsmanship, ensuring these skills are not only preserved but reimagined for modern contexts</p>
-                <p>By partnering with local artisans, communities, and industries, the college aims to create opportunities for real-world experience, sustainable careers, and meaningful social impact. Promoting innovation, entrepreneurship, and ethical design practices are also key pillars of its mission.</p>
-                <p>Ultimately, the college endeavors to empower artists and makers to become cultural contributors, educators, and changemakers in the creative economy</p>
+        <a href="index.html" class="logo">DAGE</a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="courses.html">Programs</a></li>
+                <li><a href="join.html">Admissions</a></li>
+                <li><a href="fees&funding.html">Fees</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <!-- Replace # with the deployed login.php URL later -->
+                    <a href="#" class="nav-portal">Portal</a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content reveal">
+
+                <div class="eyebrow">
+                    <span></span>
+                    Discover DAGE College
                 </div>
-                <div class="Goals-image">
-                    <img src="goals.jpg" alt="Goals">
-                </div>
-            </div>
-        </section>
-                  <section id="Dreams" class="Dreams-section container">
-            <h2>Dreams</h2>
-            <div class="Dreams-grid">
-                <div class="Dreams-text">
-                    <p>The college dreams of becoming a global hub for artistic excellence, where creativity, tradition, and innovation unite. It envisions empowering a new generation of artists and craftspeople who shape culture, inspire communities, and preserve heritage. The college aspires to revive endangered crafts, spark global recognition for local artistry, and lead sustainable, socially conscious design. Through collaboration, research, and outreach, it dreams of transforming passion into purpose and art into impact</p>
-                </div>
-                <div class="Dreams-image">
-                    <img src="dreams .jpg" alt="Dreams">
-                </div>
-            </div>
-        </section>
-                  <section id="History" class="History-section container">
-            <h2>History</h2>
-            <div class="History-grid">
-                <div class="History-text">
-                   <p>The College just started of as an Idea of just helping people in a salon, whereby an individual may come through and ask for a job but since they dont know much about the cosmetology so they were taught hands-on, whenever Madam would get a customer thats when she'll teach her people there.</p>
-                   <p>It worked. Till it reached a certain point whereby alot of people would want to come and learn from her with even some little payment for gratitude, and thats when the idea of having a college came through.</p>
-                   <p>The core foundation of this college is under cosmetology for its the first ever subject being taught to people and it gave birth to all other arts of studies in the college.</p>
-                   <p>It all started in the mid 2000's then by 2012 she managed to actually open up the first class of cosmetology having almost 25 students a class.</p>
-                </div>
-                <div class="History-image">
-                    <img src="history.jpg" alt="History">
-                </div>
-            </div>
-        </section>
-                  <section id="Vision" class="Vision-section container">
-            <h2>Vision</h2>
-            <div class="Vision-grid">
-                <div class="Vision-text">
-                  <p>To be a leading institution that celebrates and advances the rich traditions of arts and crafts while fostering innovation, creativity, and cultural sustainability. The college envisions a future where artistic expression is deeply valued as a force for education, empowerment, and positive societal change. Through excellence in teaching, research, and community engagement, it aims to cultivate skilled, thoughtful, and responsible artists and designers who contribute meaningfully to the global creative landscape. The college seeks to bridge the gap between traditional craftsmanship and contemporary practice, ensuring that heritage skills are preserved, evolved, and reimagined for future generations. It aspires to create an inclusive, dynamic learning environment that nurtures talent, encourages experimentation, and inspires lifelong learning</p>
-                </div>
-                <div class="Vision-image">
-                    <img src="vision.jpg" alt="Vision">
-                </div>
-            </div>
-        </section>
-                  <section id="Mission" class="Mission-section container">
-            <h2>Mission</h2>
-            <div class="Mission-grid">
-                <div class="Mission-text">
-                  <p>Our mission is to provide a transformative education in the arts and crafts that blends traditional knowledge with contemporary practices. We are committed to nurturing creativity, craftsmanship, and critical thinking in a supportive and inclusive environment. The college aims to equip students with the skills, confidence, and cultural awareness needed to become innovative artists, ethical designers, and engaged citizens. By preserving heritage crafts and encouraging experimentation, we strive to keep cultural traditions alive while inspiring new forms of artistic expression. Through community partnerships, hands-on learning, and interdisciplinary collaboration, we prepare our students to contribute meaningfully to the creative industries and society at large. Sustainability, social responsibility, and respect for diverse artistic traditions are at the core of our mission, guiding our efforts to shape a more vibrant, thoughtful, and connected world through the power of the handmade</p>
-                </div>
-                <div class="Mission-image">
-                    <img src="mission.jpg" alt="Mission">
-                </div>
-            </div>
-        </section>
-    </main>
-    
-        <footer>
-        <div class="container footer-content">
-            <div class="footer-section about-footer">
-                <h3>DAGE</h3>
-                <p>The vision you get in your dream, is our goal to make sure you make it happen.</p>
-            </div>
-            <div class="footer-section quick-links">
-                <h3>Quick Nav</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="join.html">Join Now</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section contact-info-footer">
-                <h3>Reach Out</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Sinza Afrikasana, Mabatini RD, Dar Es Salaam</p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+255787413663">+255 (787) 413 663</a></p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+255743888181">+255 (743) 888 181</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:dageschoolhairdressing@gmail.com">dageschoolhairdressing@gmail.com</a></p>
-            </div>
-            <div class="footer-section social-links">
-                <h3>Connect With Us</h3>
-                <a href="https://www.facebook.com/dagecollege.tz/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.twitter.com/dagecollege_tz/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/dagecollege_tz/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/dage_college.tz/" target="_blank" aria-label="tiktok"><i class="fab fa-tiktok"></i></a>
-            
+
+                <h1>
+                    Where passion becomes
+                    <span>purpose.</span>
+                </h1>
+
+                <p>
+                    DAGE College is built around the belief that education should
+                    give people more than knowledge. It should give them practical
+                    skills, confidence, creativity and the opportunity to build
+                    a meaningful future.
+                </p>
+
+                <div class="hero-line"></div>
+
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2012 DAGE College. All rights reserved.</p>
-                <p>Product of ZION</p>
-                <p>by Gregory Kiliba</p>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section>
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-number">01 — ABOUT US</span>
+                <h2>Who are we?</h2>
+                <p>
+                    A college born from a desire to turn practical skills
+                    into opportunities.
+                </p>
+            </div>
+
+            <div class="intro-grid">
+
+                <div class="intro-text">
+                    <p>
+                        DAGE College was established in 2012 and registered with
+                        VETA with registration number REG/NACTVET/0502.
+                    </p>
+
+                    <p>
+                        The college began with a strong focus on beauty and
+                        cosmetology, growing from a practical desire to help
+                        young women and people from challenging environments
+                        discover skills that could help them shape their futures.
+                    </p>
+
+                    <p>
+                        Today, DAGE brings together practical training and
+                        creativity across areas including cosmetology, decor,
+                        entrepreneurship, life skills, culinary and bakery
+                        studies, and computer education.
+                    </p>
+
+                    <p>
+                        At the heart of DAGE is a simple idea: when people are
+                        given the opportunity to learn, practice and believe in
+                        their abilities, they can transform their dreams into
+                        something real.
+                    </p>
+                </div>
+
+                <div class="image-card">
+                    <img src="image1.jpg" alt="Students at DAGE College">
+                </div>
+
             </div>
         </div>
-    </footer>
-    </body>
+    </section>
+
+
+    <!-- FOUNDER -->
+    <section class="founder-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-number">02 — OUR FOUNDER</span>
+                <h2>The woman behind the vision.</h2>
+            </div>
+
+            <div class="founder-grid">
+
+                <div class="founder-image">
+                    <div class="image-card">
+                        <img src="founder.jpg" alt="Ms. Genoveva Kiliba, Founder of DAGE College">
+                    </div>
+                </div>
+
+                <div class="founder-text">
+
+                    <h3>Ms. Genoveva Kiliba</h3>
+
+                    <p>
+                        An entrepreneur and visionary, Ms. Genoveva Kiliba
+                        founded DAGE College in 2012 with a passion for
+                        education, practical skills and community development.
+                    </p>
+
+                    <p>
+                        Her journey began with a desire to teach people the
+                        practical skills of cosmetology and beauty. What began
+                        as hands-on teaching gradually grew into a broader
+                        vision for an institution where people could learn,
+                        develop their abilities and create opportunities for
+                        themselves.
+                    </p>
+
+                    <p>
+                        Through DAGE, that vision expanded into arts and crafts,
+                        cosmetology, decor, bakery and culinary studies and
+                        other areas designed to equip students with useful,
+                        practical knowledge.
+                    </p>
+
+                    <div class="founder-tag">
+                        <i class="fa-solid fa-star"></i>
+                        Founder & Visionary
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- HISTORY -->
+    <section>
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-number">03 — OUR HISTORY</span>
+                <h2>From a salon to a college.</h2>
+            </div>
+
+            <div class="history-grid">
+
+                <div class="history-text">
+
+                    <p>
+                        DAGE College began as an idea rooted in practical
+                        experience. People would come to a salon looking for
+                        opportunities, but many did not yet have the
+                        cosmetology skills required to work in the field.
+                    </p>
+
+                    <p>
+                        They were taught hands-on whenever an opportunity
+                        arose. When a customer came in, it became another
+                        opportunity to teach and develop practical skills.
+                    </p>
+
+                    <p>
+                        Over time, more people began coming specifically to
+                        learn. What started informally eventually developed
+                        into the idea of establishing a college.
+                    </p>
+
+                    <p>
+                        Cosmetology became the foundation of DAGE and the
+                        first subject taught. From that foundation, the
+                        institution gradually expanded into other areas of
+                        practical and creative education.
+                    </p>
+
+                    <p>
+                        The journey began in the mid-2000s, eventually leading
+                        to the opening of the first cosmetology class in 2012,
+                        with approximately 25 students in a class.
+                    </p>
+
+                </div>
+
+                <div class="history-image">
+                    <div class="image-card">
+                        <img src="history.jpg" alt="DAGE College history">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- GOALS -->
+    <section class="goals-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-number">04 — OUR GOALS</span>
+                <h2>Skills with purpose.</h2>
+            </div>
+
+            <div class="goals-grid">
+
+                <div class="goals-image">
+                    <div class="image-card">
+                        <img src="goals.jpg" alt="DAGE College goals">
+                    </div>
+                </div>
+
+                <div class="goals-text">
+
+                    <p>
+                        DAGE College focuses on nurturing creativity,
+                        preserving traditional skills and encouraging
+                        innovation across visual and applied arts.
+                    </p>
+
+                    <p>
+                        We aim to provide hands-on education that combines
+                        technical proficiency with creative expression,
+                        allowing students to explore their abilities through
+                        areas such as cosmetology, decor, baking and culinary
+                        arts and other practical disciplines.
+                    </p>
+
+                    <p>
+                        The college also seeks to create an environment where
+                        students can develop critical thinking, creativity,
+                        cultural awareness and confidence.
+                    </p>
+
+                    <p>
+                        Through connections with communities, artisans and
+                        industries, DAGE aims to create opportunities for
+                        practical experience, entrepreneurship, sustainable
+                        careers and meaningful social contribution.
+                    </p>
+
+                    <p>
+                        Ultimately, our goal is to empower students to become
+                        skilled professionals, entrepreneurs, creators and
+                        contributors to their communities.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- DREAMS -->
+    <section class="dreams-section">
+        <div class="container">
+
+            <div class="dreams-box">
+
+                <img src="dreams .jpg" alt="DAGE College dreams">
+
+                <div class="dreams-overlay"></div>
+
+                <div class="dreams-content">
+
+                    <span class="section-number">05 — OUR DREAM</span>
+
+                    <h2>Think beyond today.</h2>
+
+                    <p>
+                        DAGE dreams of becoming a place where creativity,
+                        tradition and innovation come together. We envision
+                        empowering a new generation of skilled artists,
+                        craftspeople and professionals who can shape culture,
+                        inspire communities and preserve valuable heritage.
+                    </p>
+
+                    <p style="margin-top:18px;">
+                        Through collaboration, research and outreach, we aspire
+                        to transform passion into purpose and practical skills
+                        into lasting impact.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- VISION & MISSION -->
+    <section>
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-number">06 — OUR DIRECTION</span>
+                <h2>Where we are going.</h2>
+            </div>
+
+            <div class="vision-mission-grid">
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+
+                    <h2>Vision</h2>
+
+                    <p>
+                        To be a leading institution that celebrates and
+                        advances the rich traditions of arts and crafts while
+                        fostering innovation, creativity and cultural
+                        sustainability.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        DAGE envisions a future where artistic expression is
+                        valued as a force for education, empowerment and
+                        positive societal change.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Through excellence in teaching, research and community
+                        engagement, we aim to cultivate skilled, thoughtful and
+                        responsible professionals who contribute meaningfully
+                        to the creative landscape.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <h2>Mission</h2>
+
+                    <p>
+                        Our mission is to provide transformative education in
+                        arts, crafts and practical disciplines by blending
+                        traditional knowledge with contemporary practices.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        We are committed to nurturing creativity,
+                        craftsmanship and critical thinking in a supportive
+                        and inclusive learning environment.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Through hands-on learning, community partnerships and
+                        interdisciplinary collaboration, we prepare students
+                        to contribute meaningfully to the creative industries
+                        and society.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="about-cta">
+        <div class="container">
+
+            <div class="cta-box">
+
+                <h2>Your journey can start here.</h2>
+
+                <p>
+                    Explore our programs and discover a practical path toward
+                    the future you want to build.
+                </p>
+
+                <a href="courses.html" class="cta-button">
+                    Explore Our Programs
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container footer-grid">
+
+        <div class="footer-section footer-brand">
+            <h3>DAGE</h3>
+
+            <p>
+                The vision you get in your dream,
+                is our goal to make sure you make it happen.
+            </p>
+        </div>
+
+
+        <div class="footer-section">
+
+            <h3>Explore</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Programs</a></li>
+                <li><a href="join.html">Admissions</a></li>
+                <li><a href="fees&funding.html">Fees</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+
+
+        <div class="footer-section">
+
+            <h3>Reach Out</h3>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Sinza Afrikasana, Mabatini RD, Dar Es Salaam
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+255787413663">
+                    +255 (787) 413 663
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+255743888181">
+                    +255 (743) 888 181
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:dageschoolhairdressing@gmail.com">
+                    dageschoolhairdressing@gmail.com
+                </a>
+            </p>
+
+        </div>
+
+
+        <div class="footer-section">
+
+            <h3>Connect</h3>
+
+            <div class="footer-socials">
+
+                <a href="https://www.facebook.com/dagecollege.tz/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.twitter.com/dagecollege_tz/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <a href="https://www.instagram.com/dagecollege_tz/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/dage_college.tz/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="container footer-bottom-inner">
+
+            <p>
+                &copy; 2012 DAGE College. All rights reserved.
+            </p>
+
+            <p>
+                Product of ZION
+            </p>
+
+            <p>
+                By Gregory Kiliba
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
 </html>
