@@ -3,123 +3,1751 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAGE COLLEGE</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-    <header>
-        <div class="container header-content">
-            <a href="index.html" class="logo">DAGE</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <section id="join" class="join-section container">
-            <h2>Ready to Start Your Educational Journey?</h2>
-            <p class="section-description">Take the first step towards a better education. Fill out the form below to inquire about our courses.</p>
-            <form action="https://formsubmit.co/dageschoolhairdressing@gmail.com" method="POST" class="joining-form">
-                <div class="form-group">
-                    <label for="name">Full Name: <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address: <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="youremail@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
-                </div>
-                <div class="form-group">
-                    <label for="interest">I'm interested in: <span class="required">*</span></label>
-                    <select id="interest" name="interest" required>
-                        <option value=""> Select an option </option>
-                        <option value="Cosmetology">Cosmetology</option>
-                        <option value="Baking & Culinary">Baking & Culinary</option>
-                        <option value="Decor">Decor</option>
-                        <option value="Public Speaking">Public Speaking</option>
-                        <option value="Computer">Computer</option>
-                        <option value="Hostel">Hostel</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="goals">Tell us about your eductaional goals (optional):</label>
-                    <textarea id="goals" name="goals" rows="5" placeholder="e.g., 'I want to become inversed with the world of beauticians.'"></textarea>
-                </div>
-                <button type="submit" class="btn primary-btn join-submit-btn">Submit Your Inquiry</button>
-            </form>
-        </section>
 
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>Connect With Us</h2>
-                <p class="section-description">We're always here to help you on your educational journey. Reach out to us through any of the channels below:</p>
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Visit Us</h3>
-                        <p>Sinza Afrikasana, Mabatini RD, Dar Es Salaam</p>
+    <title>Admissions | DAGE College</title>
+    <meta name="description" content="Start your educational journey at DAGE College. Send an admissions inquiry and discover our programs.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        :root {
+            --bg: #08080d;
+            --bg-soft: #101017;
+            --card: rgba(255,255,255,0.055);
+            --border: rgba(255,255,255,0.10);
+
+            --white: #ffffff;
+            --text: #e9e9ee;
+            --muted: #a3a3ae;
+
+            --red: #e4113e;
+            --pink: #ff0783;
+
+            --gradient: linear-gradient(135deg, #e4113e, #ff0783);
+
+            --container: 1180px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(228,17,62,0.12),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 90% 25%,
+                    rgba(255,7,131,0.09),
+                    transparent 25%
+                ),
+                var(--bg);
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+        .container {
+            width: min(92%, var(--container));
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background: rgba(8,8,13,0.80);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .header-content {
+            min-height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            position: relative;
+
+            color: white;
+
+            font-size: 1.65rem;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+        }
+
+        .logo::after {
+            content: "";
+
+            position: absolute;
+
+            right: -12px;
+            bottom: 6px;
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--pink);
+
+            box-shadow:
+                0 0 15px rgba(255,7,131,0.8);
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+
+            gap: 28px;
+
+            list-style: none;
+        }
+
+        nav a {
+            position: relative;
+
+            color: #c7c7cf;
+
+            font-size: 0.88rem;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        nav a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 2px;
+
+            background: var(--gradient);
+
+            transition: 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: white;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        .nav-portal {
+            padding: 10px 18px;
+
+            border-radius: 30px;
+
+            background: var(--gradient);
+
+            color: white !important;
+
+            box-shadow:
+                0 8px 25px rgba(228,17,62,0.22);
+        }
+
+        .nav-portal::after {
+            display: none;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .admissions-hero {
+            position: relative;
+
+            min-height: 70vh;
+
+            padding: 150px 0 90px;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+        .admissions-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 520px;
+            height: 520px;
+
+            right: -180px;
+            top: 20px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,7,131,0.08);
+
+            filter: blur(100px);
+        }
+
+        .hero-content {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 9px;
+
+            margin-bottom: 20px;
+
+            color: #ff5c9f;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .eyebrow span {
+            width: 30px;
+            height: 1px;
+
+            background: var(--pink);
+        }
+
+        .hero-content h1 {
+            font-family: "Playfair Display", serif;
+
+            color: white;
+
+            font-size:
+                clamp(3rem, 7vw, 6rem);
+
+            line-height: 0.98;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 28px;
+        }
+
+        .hero-content h1 span {
+            background: var(--gradient);
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero-content p {
+            max-width: 700px;
+
+            color: var(--muted);
+
+            font-size: 1.08rem;
+        }
+
+        .hero-line {
+            width: 80px;
+            height: 4px;
+
+            margin-top: 35px;
+
+            border-radius: 10px;
+
+            background: var(--gradient);
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================== */
+
+        section {
+            padding: 95px 0;
+        }
+
+        .section-heading {
+            max-width: 720px;
+
+            margin-bottom: 48px;
+        }
+
+        .section-number {
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #ff4f97;
+
+            font-size: 0.75rem;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+
+            color: white;
+
+            font-size:
+                clamp(2.3rem, 4vw, 3.6rem);
+
+            line-height: 1.1;
+
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           ADMISSIONS AREA
+        ========================== */
+
+        .admissions-section {
+            background:
+                rgba(255,255,255,0.018);
+        }
+
+        .admissions-grid {
+            display: grid;
+
+            grid-template-columns:
+                0.75fr 1.25fr;
+
+            gap: 60px;
+
+            align-items: start;
+        }
+
+
+        /* LEFT SIDE */
+
+        .admissions-info {
+            position: sticky;
+
+            top: 110px;
+        }
+
+        .admissions-info h3 {
+            font-family: "Playfair Display", serif;
+
+            color: white;
+
+            font-size: 2rem;
+
+            margin-bottom: 15px;
+        }
+
+        .admissions-info > p {
+            color: var(--muted);
+
+            margin-bottom: 28px;
+        }
+
+        .process-list {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+        }
+
+        .process-item {
+            display: flex;
+
+            gap: 15px;
+
+            padding: 18px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .process-number {
+            flex: 0 0 38px;
+
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: var(--gradient);
+
+            color: white;
+
+            font-size: 0.78rem;
+            font-weight: 800;
+        }
+
+        .process-item h4 {
+            color: white;
+
+            font-size: 0.95rem;
+
+            margin-bottom: 3px;
+        }
+
+        .process-item p {
+            color: #8f8f9a;
+
+            font-size: 0.82rem;
+
+            line-height: 1.5;
+        }
+
+
+        /* FORM */
+
+        .form-wrapper {
+            padding: 42px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.075),
+                    rgba(255,255,255,0.025)
+                );
+
+            border:
+                1px solid var(--border);
+
+            box-shadow:
+                0 30px 70px rgba(0,0,0,0.25);
+        }
+
+        .form-header {
+            margin-bottom: 32px;
+        }
+
+        .form-header h3 {
+            font-family: "Playfair Display", serif;
+
+            color: white;
+
+            font-size: 2rem;
+
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            color: var(--muted);
+
+            font-size: 0.9rem;
+        }
+
+        .joining-form {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 22px;
+        }
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+        }
+
+        .form-group label {
+            color: #d9d9e0;
+
+            font-size: 0.84rem;
+            font-weight: 600;
+        }
+
+        .required {
+            color: #ff4f97;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border-radius: 13px;
+
+            border:
+                1px solid rgba(255,255,255,0.10);
+
+            background:
+                rgba(0,0,0,0.25);
+
+            color: white;
+
+            outline: none;
+
+            transition:
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #666672;
+        }
+
+        .form-group select {
+            color: #bdbdc7;
+
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: #111118;
+
+            color: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: rgba(255,7,131,0.55);
+
+            background:
+                rgba(255,7,131,0.035);
+
+            box-shadow:
+                0 0 0 3px rgba(255,7,131,0.08);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+
+            min-height: 140px;
+        }
+
+        .form-note {
+            color: #777783;
+
+            font-size: 0.76rem;
+
+            margin-top: -5px;
+        }
+
+        .join-submit-btn {
+            width: 100%;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 15px 25px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background: var(--gradient);
+
+            color: white;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 12px 30px rgba(228,17,62,0.22);
+
+            transition: 0.3s ease;
+        }
+
+        .join-submit-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 18px 40px rgba(255,7,131,0.25);
+        }
+
+
+        /* =========================
+           QUICK CONTACT
+        ========================== */
+
+        .contact-strip {
+            padding: 80px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .contact-card {
+            padding: 30px;
+
+            border-radius: 23px;
+
+            background: var(--card);
+
+            border:
+                1px solid var(--border);
+
+            transition: 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(255,7,131,0.25);
+        }
+
+        .contact-icon {
+            width: 52px;
+            height: 52px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 18px;
+
+            border-radius: 16px;
+
+            background: var(--gradient);
+
+            color: white;
+        }
+
+        .contact-card h3 {
+            color: white;
+
+            margin-bottom: 7px;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+
+            font-size: 0.88rem;
+        }
+
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .final-cta {
+            padding:
+                100px 0 115px;
+        }
+
+        .cta-box {
+            padding: 75px 30px;
+
+            text-align: center;
+
+            border-radius: 32px;
+
+            border:
+                1px solid rgba(255,255,255,0.10);
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(255,7,131,0.24),
+                    transparent 55%
+                ),
+                linear-gradient(
+                    135deg,
+                    rgba(228,17,62,0.17),
+                    rgba(255,7,131,0.06)
+                );
+        }
+
+        .cta-box h2 {
+            font-family: "Playfair Display", serif;
+
+            color: white;
+
+            font-size:
+                clamp(2.3rem, 5vw, 4rem);
+
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            max-width: 620px;
+
+            margin: 0 auto;
+
+            color: #bdbdc7;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding-top: 70px;
+
+            background: #06060a;
+
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.3fr 0.8fr 1.2fr 0.8fr;
+
+            gap: 45px;
+
+            padding-bottom: 55px;
+        }
+
+        .footer-section h3 {
+            color: white;
+
+            margin-bottom: 18px;
+
+            font-size: 1rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.6rem;
+
+            letter-spacing: 3px;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: #858591;
+
+            font-size: 0.88rem;
+
+            margin-bottom: 9px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            transition: 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff4f97;
+        }
+
+        .footer-socials {
+            display: flex;
+
+            gap: 10px;
+        }
+
+        .footer-socials a {
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(255,255,255,0.10);
+
+            color: #aaaab4;
+        }
+
+        .footer-socials a:hover {
+            background: var(--gradient);
+
+            border-color: transparent;
+
+            color: white;
+        }
+
+        .footer-bottom {
+            padding: 22px 0;
+
+            border-top:
+                1px solid rgba(255,255,255,0.07);
+        }
+
+        .footer-bottom-inner {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: #65656f;
+
+            font-size: 0.78rem;
+        }
+
+
+        /* =========================
+           ANIMATION
+        ========================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            animation:
+                reveal 0.8s ease forwards;
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 950px) {
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 0.78rem;
+            }
+
+            .admissions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admissions-info {
+                position: static;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 720px) {
+
+            .header-content {
+                min-height: 68px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .admissions-hero {
+                min-height: auto;
+
+                padding:
+                    130px 0 75px;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .form-wrapper {
+                padding: 28px 22px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+            .footer-bottom-inner {
+                flex-direction: column;
+
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header>
+
+    <div class="container header-content">
+
+        <a href="index.html" class="logo">
+            DAGE
+        </a>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="courses.html">
+                        Programs
+                    </a>
+                </li>
+
+                <li>
+                    <a href="join.html" class="active">
+                        Admissions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fees&funding.html">
+                        Fees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <!-- Connect to login.php after deployment -->
+                    <a href="#" class="nav-portal">
+                        Portal
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="admissions-hero">
+
+    <div class="container">
+
+        <div class="hero-content reveal">
+
+            <div class="eyebrow">
+                <span></span>
+                DAGE College Admissions
+            </div>
+
+            <h1>
+                Your next chapter
+                <span>starts here.</span>
+            </h1>
+
+            <p>
+                Whether you are discovering a new passion, developing an
+                existing talent or preparing for a career, DAGE College
+                provides a place to learn practical skills and move forward
+                with confidence.
+            </p>
+
+            <div class="hero-line"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ADMISSIONS
+========================== -->
+
+<section class="admissions-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-number">
+                01 — START YOUR JOURNEY
+            </span>
+
+            <h2>
+                Tell us what you want to learn.
+            </h2>
+
+            <p>
+                Send us an inquiry and our team can provide you with
+                information about your preferred program and the next steps.
+            </p>
+
+        </div>
+
+
+        <div class="admissions-grid">
+
+
+            <!-- LEFT -->
+
+            <div class="admissions-info">
+
+                <h3>
+                    How it works
+                </h3>
+
+                <p>
+                    Getting started with DAGE is simple. Begin by telling us
+                    a little about yourself and the area you are interested in.
+                </p>
+
+
+                <div class="process-list">
+
+
+                    <div class="process-item">
+
+                        <div class="process-number">
+                            01
+                        </div>
+
+                        <div>
+                            <h4>
+                                Choose your interest
+                            </h4>
+
+                            <p>
+                                Select the program or area you would like
+                                to learn.
+                            </p>
+                        </div>
+
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <h3>Call Us</h3>
-                        <p><a href="tel:+255787413663">+255 (787) 413-663</a></p>
+
+
+                    <div class="process-item">
+
+                        <div class="process-number">
+                            02
+                        </div>
+
+                        <div>
+                            <h4>
+                                Send your inquiry
+                            </h4>
+
+                            <p>
+                                Complete the short form with your contact
+                                information and goals.
+                            </p>
+                        </div>
+
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email Us</h3>
-                        <p><a href="mailto:dageschoolhairdressing@gmail.com">dageschoolhairdressing@gmail.com</a></p>
+
+
+                    <div class="process-item">
+
+                        <div class="process-number">
+                            03
+                        </div>
+
+                        <div>
+                            <h4>
+                                Hear from DAGE
+                            </h4>
+
+                            <p>
+                                Our team can respond with information about
+                                your selected area and admission process.
+                            </p>
+                        </div>
+
                     </div>
+
+
+                    <div class="process-item">
+
+                        <div class="process-number">
+                            04
+                        </div>
+
+                        <div>
+                            <h4>
+                                Begin your journey
+                            </h4>
+
+                            <p>
+                                Take the next steps toward joining the DAGE
+                                College community.
+                            </p>
+                        </div>
+
+                    </div>
+
                 </div>
-                
+
             </div>
-        </section>
-         <footer>
-        <div class="container footer-content">
-            <div class="footer-section about-footer">
-                <h3>DAGE</h3>
-                <p>The vision you get in your dream, is our goal to make sure you make it happen.</p>
+
+
+            <!-- FORM -->
+
+            <div class="form-wrapper">
+
+                <div class="form-header">
+
+                    <h3>
+                        Admissions Inquiry
+                    </h3>
+
+                    <p>
+                        Fill in the form below and tell us what you're
+                        interested in.
+                    </p>
+
+                </div>
+
+
+                <form
+                    action="https://formsubmit.co/dageschoolhairdressing@gmail.com"
+                    method="POST"
+                    class="joining-form"
+                >
+
+                    <!-- FormSubmit settings -->
+
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New DAGE College Admissions Inquiry"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="_captcha"
+                        value="false"
+                    >
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Full Name
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+255..."
+                                autocomplete="tel"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="interest">
+                                I'm interested in
+                                <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="interest"
+                                name="interest"
+                                required
+                            >
+
+                                <option value="">
+                                    Select a program
+                                </option>
+
+                                <option value="Cosmetology">
+                                    Cosmetology
+                                </option>
+
+                                <option value="Baking & Culinary">
+                                    Baking & Culinary
+                                </option>
+
+                                <option value="Decor">
+                                    Decor
+                                </option>
+
+                                <option value="Computer">
+                                    Computer
+                                </option>
+
+                                <option value="Public Speaking">
+                                    Public Speaking
+                                </option>
+
+                                <option value="Entrepreneurship">
+                                    Entrepreneurship
+                                </option>
+
+                                <option value="Hostel">
+                                    Hostel Accommodation
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="goals">
+                            Tell us about your educational goals
+                        </label>
+
+                        <textarea
+                            id="goals"
+                            name="goals"
+                            placeholder="Tell us what you would like to learn or achieve..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <p class="form-note">
+                        By submitting this form, you are sending an inquiry
+                        to DAGE College for admissions information.
+                    </p>
+
+
+                    <button
+                        type="submit"
+                        class="join-submit-btn"
+                    >
+
+                        Submit Your Inquiry
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                    </button>
+
+                </form>
+
             </div>
-            <div class="footer-section quick-links">
-                <h3>Quick Nav</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="join.html">Join Now</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section contact-info-footer">
-                <h3>Reach Out</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Sinza Afrikasana, Mabatini RD, Dar Es Salaam</p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+255787413663">+255 (787) 413 663</a></p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+255743888181">+255 (743) 888 181</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:dageschoolhairdressing@gmail.com">dageschoolhairdressing@gmail.com</a></p>
-            </div>
-            <div class="footer-section social-links">
-                <h3>Connect With Us</h3>
-                <a href="https://www.facebook.com/dagecollege.tz/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.twitter.com/dagecollege_tz/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/dagecollege_tz/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/dage_college.tz/" target="_blank" aria-label="tiktok"><i class="fab fa-tiktok"></i></a>
-            
-            </div>
+
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2012 DAGE College. All rights reserved.</p>
-                
-                <p>Product of ZION</p>
-                <p>by Gregory Kiliba</p>
-            </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT STRIP
+========================== -->
+
+<section class="contact-strip">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-number">
+                02 — NEED HELP?
+            </span>
+
+            <h2>
+                Talk to DAGE directly.
+            </h2>
+
+            <p>
+                If you would rather speak with us directly, you can reach
+                DAGE College through any of the channels below.
+            </p>
+
         </div>
-    </footer>
-        </header>
-    </main>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <h3>
+                    Visit Us
+                </h3>
+
+                <p>
+                    Sinza Afrikasana,
+                    Mabatini RD,
+                    Dar Es Salaam
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <h3>
+                    Call Us
+                </h3>
+
+                <p>
+                    <a href="tel:+255787413663">
+                        +255 (787) 413 663
+                    </a>
+                </p>
+
+                <p>
+                    <a href="tel:+255743888181">
+                        +255 (743) 888 181
+                    </a>
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <h3>
+                    Email Us
+                </h3>
+
+                <p>
+                    <a href="mailto:dageschoolhairdressing@gmail.com">
+                        dageschoolhairdressing@gmail.com
+                    </a>
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL CTA
+========================== -->
+
+<section class="final-cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Know what you want to study?
+            </h2>
+
+            <p>
+                Explore the programs available at DAGE College and find
+                the path that matches your interests.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-section footer-brand">
+
+            <h3>
+                DAGE
+            </h3>
+
+            <p>
+                The vision you get in your dream,
+                is our goal to make sure you make it happen.
+            </p>
+
+        </div>
+
+
+        <div class="footer-section">
+
+            <h3>
+                Explore
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="courses.html">
+                        Programs
+                    </a>
+                </li>
+
+                <li>
+                    <a href="join.html">
+                        Admissions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="fees&funding.html">
+                        Fees
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-section">
+
+            <h3>
+                Reach Out
+            </h3>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Sinza Afrikasana, Mabatini RD, Dar Es Salaam
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+
+                <a href="tel:+255787413663">
+                    +255 (787) 413 663
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+
+                <a href="tel:+255743888181">
+                    +255 (743) 888 181
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+
+                <a href="mailto:dageschoolhairdressing@gmail.com">
+                    dageschoolhairdressing@gmail.com
+                </a>
+            </p>
+
+        </div>
+
+
+        <div class="footer-section">
+
+            <h3>
+                Connect
+            </h3>
+
+            <div class="footer-socials">
+
+                <a
+                    href="https://www.facebook.com/dagecollege.tz/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                >
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a
+                    href="https://www.twitter.com/dagecollege_tz/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitter"
+                >
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/dagecollege_tz/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a
+                    href="https://www.tiktok.com/dage_college.tz/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="TikTok"
+                >
+                    <i class="fab fa-tiktok"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="container footer-bottom-inner">
+
+            <p>
+                &copy; 2012 DAGE College. All rights reserved.
+            </p>
+
+            <p>
+                Product of ZION
+            </p>
+
+            <p>
+                By Gregory Kiliba
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
 </body>
 </html>
