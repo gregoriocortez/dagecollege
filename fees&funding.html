@@ -3,101 +3,1211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAGE COLLEGE</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Fees & Funding | DAGE College</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* =========================================================
+           DAGE COLLEGE — FEES & FUNDING
+           Page-local styling
+        ========================================================= */
+
+        :root {
+            --red: #e4113e;
+            --pink: #ff0783;
+            --dark: #07070b;
+            --dark-2: #0d0d14;
+            --card: rgba(255,255,255,0.055);
+            --border: rgba(255,255,255,0.11);
+            --text: #ffffff;
+            --muted: #b8b8c5;
+            --soft: #8f8f9d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(228,17,62,0.16), transparent 30%),
+                radial-gradient(circle at 85% 30%, rgba(255,7,131,0.12), transparent 28%),
+                var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(7,7,11,0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .header-content {
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 1px;
+
+            background: linear-gradient(135deg, var(--red), var(--pink));
+            box-shadow:
+                0 0 20px rgba(228,17,62,0.35),
+                inset 0 0 0 2px rgba(255,255,255,0.15);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            position: relative;
+            color: #d9d9e1;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--red), var(--pink));
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .portal-btn {
+            padding: 11px 19px;
+            border-radius: 30px;
+
+            background: linear-gradient(135deg, var(--red), var(--pink));
+            color: #fff !important;
+
+            box-shadow: 0 8px 25px rgba(228,17,62,0.22);
+        }
+
+        .portal-btn::after {
+            display: none;
+        }
+
+        .portal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(255,7,131,0.30);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .fees-hero {
+            min-height: 72vh;
+            padding-top: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fees-hero::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+
+            background: rgba(228,17,62,0.12);
+            filter: blur(80px);
+
+            top: 10%;
+            left: -100px;
+        }
+
+        .fees-hero::after {
+            content: "";
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+
+            background: rgba(255,7,131,0.10);
+            filter: blur(80px);
+
+            right: -100px;
+            bottom: 5%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 9px 17px;
+            margin-bottom: 25px;
+
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.045);
+            color: #e9e9ef;
+
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow i {
+            color: var(--pink);
+        }
+
+        .fees-hero h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 0.98;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .fees-hero h1 span {
+            background: linear-gradient(90deg, #fff, #ff4d9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            max-width: 690px;
+            margin: auto;
+
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           FEES SECTION
+        ========================================================= */
+
+        .fees-section {
+            padding: 90px 0 110px;
+            position: relative;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 55px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(30px, 4vw, 46px);
+            margin-bottom: 15px;
+        }
+
+        .section-heading h2 span {
+            color: var(--pink);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .fees-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .fee-card {
+            position: relative;
+            padding: 30px;
+
+            border: 1px solid var(--border);
+            border-radius: 24px;
+
+            background: linear-gradient(
+                145deg,
+                rgba(255,255,255,0.065),
+                rgba(255,255,255,0.025)
+            );
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            overflow: hidden;
+            transition: 0.35s ease;
+        }
+
+        .fee-card::before {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+
+            background: rgba(228,17,62,0.08);
+            filter: blur(45px);
+
+            right: -50px;
+            top: -50px;
+        }
+
+        .fee-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(255,7,131,0.35);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.35),
+                0 0 25px rgba(228,17,62,0.08);
+        }
+
+        .fee-icon {
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 17px;
+
+            background: linear-gradient(
+                135deg,
+                rgba(228,17,62,0.18),
+                rgba(255,7,131,0.16)
+            );
+
+            border: 1px solid rgba(255,255,255,0.10);
+
+            color: #ff4c9c;
+            font-size: 22px;
+
+            margin-bottom: 22px;
+        }
+
+        .fee-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .fee-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .fee-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .price {
+            display: inline-block;
+
+            margin-top: 5px;
+            padding: 9px 14px;
+
+            border-radius: 10px;
+
+            background: rgba(255,7,131,0.09);
+            border: 1px solid rgba(255,7,131,0.17);
+
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .fee-highlight {
+            border-color: rgba(228,17,62,0.28);
+        }
+
+
+        /* =========================================================
+           PAYMENT NOTE
+        ========================================================= */
+
+        .payment-note {
+            margin-top: 35px;
+
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 20px;
+            align-items: center;
+
+            padding: 27px 30px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    110deg,
+                    rgba(228,17,62,0.12),
+                    rgba(255,7,131,0.06)
+                );
+
+            border: 1px solid rgba(255,255,255,0.10);
+        }
+
+        .payment-note-icon {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background: linear-gradient(135deg, var(--red), var(--pink));
+
+            font-size: 20px;
+        }
+
+        .payment-note h3 {
+            margin-bottom: 7px;
+            font-size: 18px;
+        }
+
+        .payment-note p {
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .fees-cta {
+            padding: 0 0 100px;
+        }
+
+        .cta-box {
+            position: relative;
+            overflow: hidden;
+
+            padding: 60px 40px;
+            text-align: center;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(228,17,62,0.20),
+                    rgba(255,7,131,0.12)
+                );
+
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .cta-box::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            filter: blur(70px);
+            top: -180px;
+            right: -100px;
+        }
+
+        .cta-box h2 {
+            position: relative;
+            font-size: clamp(28px, 4vw, 43px);
+            margin-bottom: 14px;
+        }
+
+        .cta-box p {
+            position: relative;
+            max-width: 650px;
+            margin: 0 auto 28px;
+
+            color: #d2d2dc;
+            line-height: 1.7;
+        }
+
+        .cta-btn {
+            position: relative;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 14px 24px;
+            border-radius: 30px;
+
+            background: #fff;
+            color: #111;
+
+            font-weight: 800;
+            font-size: 14px;
+
+            transition: 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #050509;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-content {
+            padding: 70px 0 55px;
+
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1.4fr 1fr;
+            gap: 45px;
+        }
+
+        .footer-section h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .about-footer h3 {
+            font-size: 25px;
+            background: linear-gradient(90deg, var(--red), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-footer p {
+            max-width: 290px;
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .quick-links ul {
+            list-style: none;
+        }
+
+        .quick-links li {
+            margin-bottom: 11px;
+        }
+
+        .quick-links a {
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .quick-links a:hover {
+            color: #fff;
+        }
+
+        .contact-info-footer p {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+
+            margin-bottom: 12px;
+        }
+
+        .contact-info-footer i {
+            color: var(--pink);
+            margin-top: 3px;
+        }
+
+        .contact-info-footer a {
+            transition: 0.3s ease;
+        }
+
+        .contact-info-footer a:hover {
+            color: #fff;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            gap: 10px;
+        }
+
+        .social-links h3 {
+            width: 100%;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.055);
+            border: 1px solid rgba(255,255,255,0.09);
+
+            color: #ccc;
+
+            transition: 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+            background: linear-gradient(135deg, var(--red), var(--pink));
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .footer-bottom .container {
+            min-height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .footer-bottom p {
+            color: #777783;
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .fees-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .header-content {
+                height: 70px;
+            }
+
+            .logo {
+                width: 43px;
+                height: 43px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links li:nth-child(2),
+            .nav-links li:nth-child(3),
+            .nav-links li:nth-child(4),
+            .nav-links li:nth-child(5),
+            .nav-links li:nth-child(6) {
+                display: none;
+            }
+
+            .portal-btn {
+                padding: 10px 15px;
+                font-size: 11px !important;
+            }
+
+            .fees-hero {
+                min-height: 68vh;
+                padding-top: 70px;
+            }
+
+            .fees-hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .fees-section {
+                padding-top: 65px;
+            }
+
+            .fee-card {
+                padding: 24px;
+            }
+
+            .payment-note {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .payment-note-icon {
+                margin: auto;
+            }
+
+            .cta-box {
+                padding: 45px 23px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-bottom .container {
+                padding: 20px 0;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
-        <header>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header>
         <div class="container header-content">
+
             <a href="index.html" class="logo">DAGE</a>
-                <nav>
+
+            <nav>
                 <ul class="nav-links">
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Programs</a></li>
+                    <li><a href="join.html">Admissions</a></li>
+                    <li><a href="fees&funding.html">Fees</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <!-- Change to login.php once the portal is deployed -->
+                        <a href="#" class="portal-btn">
+                            <i class="fas fa-right-to-bracket"></i>
+                            Portal
+                        </a>
+                    </li>
                 </ul>
             </nav>
-        </div>
 
-              <section id="Course" class="Course-section">
-            <div class="container">
-                <h2>FEES & FUNDING</h2>
-                <p class="section-description">Discover what DAGE College has to offer, in an affordable price:</p>
-                <div class="Course-grid">
-                    <div class="Course-item">
-                        <i class="fas fa-female"></i>
-                        <h3>Cosmetology</h3>
-                        <p>Hair & Skin Beauty 500,000/= 4 months in the classroom, 2 months field. Products for learning 160,000/=, Total of 710,000/=.(installments are done within 3 months) </p>
-                        
-                    </div>
-                    <div class="Course-item">
-                        <i class="fas fa-spoon"></i>
-                        <h3>Baking & Culinary</h3>
-                        <p>Cake & Snacks recipes training is 300,000/= for 8 weeks and 4 weeks field, products for learning 150,000/=, Total is 450,000/= (installments within 2 weeks). Culinary recipe treining is 550,000/= for 2 months and 1 month field, learning products cost 150,000/=, in Total of 700,000/= </p>
-                    </div>
-                    <div class="Course-item">
-                        <i class="fas fa-gift"></i>
-                        <h3>Decor</h3>
-                        <p>hall, office, party decors etc, is 550,000/= for 2 months in class and 2 month field.</p>
-                    </div>
-                    <div class="Course-item">
-                        <i class="fas fa-desktop"></i>
-                        <h3>Computer</h3>
-                        <p>Graphic Designing 375,000/= 2 months in class, 1 month field, Certificate in computer applications (operating systems, word processing and internet basics) 550,000/= 4 months, 3 months in class and 1 month field, computer applications & basics (microsoft) 375,000/= 3 months. </p>
-                        <p></p>
-                    </div>
-                    <div class="Course-item">
-                        <i class="fas fa-microphone"></i>
-                        <h3>Public Speaking</h3>
-                        <p>speaking infront of jury, lifeskills, confidence etc, 280,000/= 7 weekss</p>
-                    </div>
-                    <div class="Course-item">
-                        <i class="fas fa-bed"></i>
-                        <h3>Hostel</h3>
-                        <p>This costs 80,000/= per month .</p>
-                    </div>
+        </div>
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <main>
+
+        <section class="fees-hero">
+
+            <div class="container hero-content">
+
+                <div class="eyebrow">
+                    <i class="fas fa-wallet"></i>
+                    Affordable Learning
                 </div>
+
+                <h1>
+                    Invest in Your
+                    <span>Future.</span>
+                </h1>
+
+                <p class="hero-description">
+                    At DAGE College, we believe quality education should be
+                    practical, accessible and within reach. Explore our
+                    current training fees and accommodation costs.
+                </p>
+
             </div>
+
         </section>
-          <footer>
-        <div class="container footer-content">
-            <div class="footer-section about-footer">
-                <h3>DAGE</h3>
-                <p>The vision you get in your dream, is our goal to make sure you make it happen.</p>
+
+
+        <!-- =====================================================
+             FEES
+        ====================================================== -->
+
+        <section class="fees-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Fees & <span>Funding</span>
+                    </h2>
+
+                    <p>
+                        Discover the investment required for our practical
+                        training programmes and hostel accommodation.
+                    </p>
+
+                </div>
+
+
+                <div class="fees-grid">
+
+
+                    <!-- Cosmetology -->
+
+                    <article class="fee-card fee-highlight">
+
+                        <div class="fee-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+
+                        <h3>Cosmetology</h3>
+
+                        <p>
+                            Hair & Skin Beauty training costs
+                            <strong>500,000/=</strong>.
+                            The programme includes 4 months in the classroom
+                            followed by 2 months of field training.
+                        </p>
+
+                        <p>
+                            Learning products cost
+                            <strong>160,000/=</strong>.
+                        </p>
+
+                        <span class="price">
+                            Total: 710,000/=
+                        </span>
+
+                        <p>
+                            Installments are available within 3 months.
+                        </p>
+
+                    </article>
+
+
+                    <!-- Baking & Culinary -->
+
+                    <article class="fee-card">
+
+                        <div class="fee-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+
+                        <h3>Baking & Culinary</h3>
+
+                        <p>
+                            <strong>Cake & Snacks:</strong>
+                            300,000/= for 8 weeks of training and 4 weeks
+                            of field training.
+                        </p>
+
+                        <p>
+                            Learning products cost 150,000/=,
+                            making the total <strong>450,000/=</strong>.
+                            Installments are available within 2 weeks.
+                        </p>
+
+                        <p>
+                            <strong>Culinary Recipe Training:</strong>
+                            550,000/= for 2 months plus 1 month of field
+                            training. Learning products cost 150,000/=,
+                            bringing the total to <strong>700,000/=</strong>.
+                        </p>
+
+                    </article>
+
+
+                    <!-- Decor -->
+
+                    <article class="fee-card">
+
+                        <div class="fee-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+
+                        <h3>Decor</h3>
+
+                        <p>
+                            Training covers hall, office, party and other
+                            decorative setups.
+                        </p>
+
+                        <span class="price">
+                            550,000/=
+                        </span>
+
+                        <p>
+                            Duration: 2 months in class followed by
+                            2 months of field training.
+                        </p>
+
+                    </article>
+
+
+                    <!-- Computer -->
+
+                    <article class="fee-card">
+
+                        <div class="fee-icon">
+                            <i class="fas fa-computer"></i>
+                        </div>
+
+                        <h3>Computer</h3>
+
+                        <p>
+                            <strong>Graphic Designing:</strong>
+                            375,000/= — 2 months in class and 1 month field.
+                        </p>
+
+                        <p>
+                            <strong>Certificate in Computer Applications:</strong>
+                            550,000/= — 4 months, including 3 months in class
+                            and 1 month field.
+                        </p>
+
+                        <p>
+                            <strong>Computer Applications & Basics
+                            (Microsoft):</strong>
+                            375,000/= — 3 months.
+                        </p>
+
+                    </article>
+
+
+                    <!-- Public Speaking -->
+
+                    <article class="fee-card">
+
+                        <div class="fee-icon">
+                            <i class="fas fa-microphone-lines"></i>
+                        </div>
+
+                        <h3>Public Speaking</h3>
+
+                        <p>
+                            Training focuses on speaking in front of a jury,
+                            life skills, confidence and effective communication.
+                        </p>
+
+                        <span class="price">
+                            280,000/=
+                        </span>
+
+                        <p>
+                            Duration: 7 weeks.
+                        </p>
+
+                    </article>
+
+
+                    <!-- Hostel -->
+
+                    <article class="fee-card">
+
+                        <div class="fee-icon">
+                            <i class="fas fa-bed"></i>
+                        </div>
+
+                        <h3>Hostel</h3>
+
+                        <p>
+                            DAGE College provides hostel accommodation for
+                            students who require convenient housing during
+                            their studies.
+                        </p>
+
+                        <span class="price">
+                            80,000/= per month
+                        </span>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Payment Note -->
+
+                <div class="payment-note">
+
+                    <div class="payment-note-icon">
+                        <i class="fas fa-circle-info"></i>
+                    </div>
+
+                    <div>
+                        <h3>Need more information about payment?</h3>
+
+                        <p>
+                            Fees and payment arrangements may depend on the
+                            programme selected. Contact DAGE College directly
+                            for the latest admission and payment information
+                            before making your payment.
+                        </p>
+                    </div>
+
+                </div>
+
             </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="fees-cta">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+                    <h2>Ready to Start Your Journey?</h2>
+
+                    <p>
+                        Choose a programme that matches your passion,
+                        develop practical skills and take the next step
+                        toward your future.
+                    </p>
+
+                    <a href="join.html" class="cta-btn">
+                        Apply to DAGE
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div class="footer-section about-footer">
+
+                <h3>DAGE</h3>
+
+                <p>
+                    The vision you get in your dream, is our goal to make
+                    sure you make it happen.
+                </p>
+
+            </div>
+
+
             <div class="footer-section quick-links">
-                <h3>Quick Nav</h3>
+
+                <h3>Explore</h3>
+
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="join.html">Join Now</a></li>
+                    <li><a href="courses.html">Programs</a></li>
+                    <li><a href="join.html">Admissions</a></li>
+                    <li><a href="fees&funding.html">Fees</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+
             </div>
+
+
             <div class="footer-section contact-info-footer">
+
                 <h3>Reach Out</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Sinza Afrikasana, Mabatini RD, Dar Es Salaam</p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+255787413663">+255 (787) 413 663</a></p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+255743888181">+255 (743) 888 181</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:dageschoolhairdressing@gmail.com">dageschoolhairdressing@gmail.com</a></p>
+
+                <p>
+                    <i class="fas fa-location-dot"></i>
+                    <span>Sinza Afrikasana, Mabatini RD, Dar Es Salaam</span>
+                </p>
+
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+255787413663">
+                        +255 (787) 413 663
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+255743888181">
+                        +255 (743) 888 181
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:dageschoolhairdressing@gmail.com">
+                        dageschoolhairdressing@gmail.com
+                    </a>
+                </p>
+
             </div>
+
+
             <div class="footer-section social-links">
+
                 <h3>Connect With Us</h3>
-                <a href="https://www.facebook.com/dagecollege.tz/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.twitter.com/dagecollege_tz/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/dagecollege_tz/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/dage_college.tz/" target="_blank" aria-label="tiktok"><i class="fab fa-tiktok"></i></a>
-            
+
+                <a href="https://www.facebook.com/dagecollege.tz/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.twitter.com/dagecollege_tz/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <a href="https://www.instagram.com/dagecollege_tz/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/dage_college.tz/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+
             </div>
+
         </div>
+
+
         <div class="footer-bottom">
+
             <div class="container">
+
                 <p>&copy; 2012 DAGE College. All rights reserved.</p>
+
                 <p>Product of ZION</p>
-                <p>by Gregory Kiliba</p>
+
+                <p>By Gregory Kiliba</p>
+
             </div>
+
         </div>
+
     </footer>
-        </header>
+
 </body>
 </html>
