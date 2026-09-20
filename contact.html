@@ -3,119 +3,1630 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAGE COLLEGE</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-        <header>
-        <div class="container header-content">
-            <a href="index.html" class="logo">DAGE</a>
-                <nav>
-                <ul class="nav-links">
-                    <li><a href="join.html">Join Us</a></li>
-                </ul>
-            </nav>
-        </div>
-              
 
-              <section id="Contact" class="Contact-section">
-            <div class="container">
-                <h2>DAGE College Team</h2>
-                <p class="section-description">If you are in need of any help you can find us here any moment.</p>
-                <div class="Contact-grid">
-                    <div class="Contact-item">
-                        <div class="Contact-image">
-                    <img src="office.jpg" alt="college students">
-                </div>
-                        <h3>PRINCIPAL</h3>
-                        <p>Madam Arafa Hashim.</p>
-                        <p>+255767238544</p>
-                        <p></p>
-                        
-                    </div>
-                    <div class="Contact-item">
-                              <div class="Contact-image">
-                    <img src="madam lucky.jpg" alt="college students">
-                </div>
-                        <h3>ACADEMIC</h3>
-                        <p>Madam Lucky </p>
-                        <p>+255715551400</p>
-                    </div>
-                    <div class="Contact-item">
-                              <div class="Contact-image">
-                    <img src="kenny.jpg" alt="college students">
-                </div>
-                        <h3>ADMIN</h3>
-                        <p>Kenny Moremi</p>
-                        <p>+255785225337</p>
-                    </div>
-                    <div class="Contact-item">
-                              <div class="Contact-image">
-                    <img src="matron.jpg" alt="college students">
-                </div>
-                        <h3>MATRON</h3>
-                        <p>Benadetta </p>
-                        <p>+255748230954</p>
-                    </div>
-                    <div class="Contact-item">
-                             <div class="Contact-image">
-                    <img src="office.jpg" alt="college students">
-                </div>
-                        <h3>OFFICE</h3>
-                        <p>+255743888181</p>
-                    </div>
-                    <div class="Contact-item">
-                              <div class="Contact-image">
-                    <img src="office.jpg" alt="college students">
-                </div>
-                        <h3>SUPERVISOR</h3>
-                        <p>Gregory Kiliba</p>
-                        <p>+255784899570</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-          <footer>
-        <div class="container footer-content">
-            <div class="footer-section about-footer">
-                <h3>DAGE</h3>
-                <p>The vision you get in your dream, is our goal to make sure you make it happen.</p>
-            </div>
-            <div class="footer-section quick-links">
-                <h3>Quick Nav</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="join.html">Join Now</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+    <title>Contact | DAGE College</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* =========================================================
+           DAGE COLLEGE — CONTACT PAGE
+           Page-local styling
+        ========================================================= */
+
+        :root {
+            --red: #e4113e;
+            --pink: #ff0783;
+            --dark: #07070b;
+            --dark-2: #0d0d14;
+            --card: rgba(255,255,255,0.055);
+            --border: rgba(255,255,255,0.11);
+            --text: #ffffff;
+            --muted: #b8b8c5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(
+                    circle at 15% 10%,
+                    rgba(228,17,62,0.16),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 30%,
+                    rgba(255,7,131,0.12),
+                    transparent 28%
+                ),
+                var(--dark);
+
+            color: var(--text);
+            overflow-x: hidden;
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(7,7,11,0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .header-content {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 1px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--red),
+                    var(--pink)
+                );
+
+            box-shadow:
+                0 0 20px rgba(228,17,62,0.35),
+                inset 0 0 0 2px rgba(255,255,255,0.15);
+        }
+
+        .nav-links {
+            list-style: none;
+
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            color: #d9d9e1;
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 2px;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--red),
+                    var(--pink)
+                );
+
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .portal-btn {
+            padding: 11px 19px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--red),
+                    var(--pink)
+                );
+
+            color: #fff !important;
+
+            box-shadow:
+                0 8px 25px rgba(228,17,62,0.22);
+        }
+
+        .portal-btn::after {
+            display: none;
+        }
+
+        .portal-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 30px rgba(255,7,131,0.30);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .contact-hero {
+            min-height: 67vh;
+
+            padding-top: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 430px;
+            height: 430px;
+
+            border-radius: 50%;
+
+            background: rgba(228,17,62,0.12);
+
+            filter: blur(85px);
+
+            left: -120px;
+            top: 10%;
+        }
+
+        .contact-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 390px;
+            height: 390px;
+
+            border-radius: 50%;
+
+            background: rgba(255,7,131,0.10);
+
+            filter: blur(85px);
+
+            right: -120px;
+            bottom: 5%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 9px 17px;
+            margin-bottom: 25px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            color: #e9e9ef;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow i {
+            color: var(--pink);
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(43px, 7vw, 78px);
+
+            line-height: 0.98;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 25px;
+        }
+
+        .contact-hero h1 span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #fff,
+                    #ff4d9d
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            max-width: 680px;
+
+            margin: auto;
+
+            color: var(--muted);
+
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           CONTACT INFORMATION
+        ========================================================= */
+
+        .contact-info {
+            padding: 0 0 80px;
+        }
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .info-card {
+            padding: 27px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.065),
+                    rgba(255,255,255,0.025)
+                );
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            transition: 0.35s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(255,7,131,0.30);
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.30);
+        }
+
+        .info-icon {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 19px;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(228,17,62,0.18),
+                    rgba(255,7,131,0.16)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            color: #ff4c9c;
+
+            font-size: 20px;
+        }
+
+        .info-card h3 {
+            font-size: 17px;
+            margin-bottom: 9px;
+        }
+
+        .info-card p,
+        .info-card a {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            transition: 0.3s ease;
+        }
+
+        .info-card a:hover {
+            color: #fff;
+        }
+
+
+        /* =========================================================
+           TEAM
+        ========================================================= */
+
+        .team-section {
+            padding: 30px 0 110px;
+        }
+
+        .section-heading {
+            max-width: 700px;
+
+            margin: 0 auto 55px;
+
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(31px, 4vw, 47px);
+
+            margin-bottom: 15px;
+        }
+
+        .section-heading h2 span {
+            color: var(--pink);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+
+            line-height: 1.7;
+        }
+
+        .team-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 24px;
+        }
+
+        .team-card {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.065),
+                    rgba(255,255,255,0.025)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            transition: 0.4s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(255,7,131,0.32);
+
+            box-shadow:
+                0 25px 55px rgba(0,0,0,0.35),
+                0 0 25px rgba(228,17,62,0.07);
+        }
+
+        .team-image {
+            height: 260px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #17171f,
+                    #0b0b10
+                );
+        }
+
+        .team-image::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(7,7,11,0.80),
+                    transparent 45%
+                );
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: 0.5s ease;
+        }
+
+        .team-card:hover .team-image img {
+            transform: scale(1.06);
+        }
+
+        .team-details {
+            padding: 25px;
+        }
+
+        .team-role {
+            display: inline-block;
+
+            margin-bottom: 9px;
+
+            color: #ff4d9d;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 1.4px;
+
+            text-transform: uppercase;
+        }
+
+        .team-details h3 {
+            font-size: 21px;
+
+            margin-bottom: 13px;
+        }
+
+        .team-phone {
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            transition: 0.3s ease;
+        }
+
+        .team-phone:hover {
+            color: #fff;
+        }
+
+        .team-phone i {
+            color: var(--pink);
+        }
+
+
+        /* =========================================================
+           BOTTOM CTA
+        ========================================================= */
+
+        .contact-cta {
+            padding: 0 0 100px;
+        }
+
+        .cta-box {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 60px 40px;
+
+            text-align: center;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(228,17,62,0.20),
+                    rgba(255,7,131,0.12)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+        }
+
+        .cta-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            filter: blur(70px);
+
+            top: -180px;
+            right: -100px;
+        }
+
+        .cta-box h2 {
+            position: relative;
+
+            font-size:
+                clamp(28px, 4vw, 43px);
+
+            margin-bottom: 14px;
+        }
+
+        .cta-box p {
+            position: relative;
+
+            max-width: 650px;
+
+            margin:
+                0 auto 28px;
+
+            color: #d2d2dc;
+
+            line-height: 1.7;
+        }
+
+        .cta-btn {
+            position: relative;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 24px;
+
+            border-radius: 30px;
+
+            background: #fff;
+
+            color: #111;
+
+            font-weight: 800;
+
+            font-size: 14px;
+
+            transition: 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(0,0,0,0.25);
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #050509;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+        .footer-content {
+            padding: 70px 0 55px;
+
+            display: grid;
+
+            grid-template-columns:
+                1.4fr 1fr 1.4fr 1fr;
+
+            gap: 45px;
+        }
+
+        .footer-section h3 {
+            font-size: 16px;
+
+            margin-bottom: 20px;
+        }
+
+        .about-footer h3 {
+            font-size: 25px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--red),
+                    var(--pink)
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-footer p {
+            max-width: 290px;
+
+            color: var(--muted);
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        .quick-links ul {
+            list-style: none;
+        }
+
+        .quick-links li {
+            margin-bottom: 11px;
+        }
+
+        .quick-links a {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            transition: 0.3s ease;
+        }
+
+        .quick-links a:hover {
+            color: #fff;
+        }
+
+        .contact-info-footer p {
+            display: flex;
+
+            gap: 10px;
+
+            align-items: flex-start;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            margin-bottom: 12px;
+        }
+
+        .contact-info-footer i {
+            color: var(--pink);
+
+            margin-top: 3px;
+        }
+
+        .contact-info-footer a {
+            transition: 0.3s ease;
+        }
+
+        .contact-info-footer a:hover {
+            color: #fff;
+        }
+
+        .social-links {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            align-content: flex-start;
+
+            gap: 10px;
+        }
+
+        .social-links h3 {
+            width: 100%;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.055);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.09);
+
+            color: #ccc;
+
+            transition: 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--red),
+                    var(--pink)
+                );
+
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top:
+                1px solid
+                rgba(255,255,255,0.07);
+        }
+
+        .footer-bottom .container {
+            min-height: 70px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+        .footer-bottom p {
+            color: #777783;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 950px) {
+
+            .nav-links {
+                gap: 17px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .team-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .info-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .header-content {
+                height: 70px;
+            }
+
+            .logo {
+                width: 43px;
+                height: 43px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links li:nth-child(2),
+            .nav-links li:nth-child(3),
+            .nav-links li:nth-child(4),
+            .nav-links li:nth-child(5),
+            .nav-links li:nth-child(6) {
+                display: none;
+            }
+
+            .portal-btn {
+                padding: 10px 15px;
+
+                font-size: 11px !important;
+            }
+
+            .contact-hero {
+                min-height: 65vh;
+
+                padding-top: 70px;
+            }
+
+            .contact-hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-image {
+                height: 280px;
+            }
+
+            .cta-box {
+                padding: 45px 23px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .footer-bottom .container {
+                padding: 20px 0;
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header>
+
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                DAGE
+            </a>
+
+            <nav>
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="courses.html">
+                            Programs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="join.html">
+                            Admissions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="fees&funding.html">
+                            Fees
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li>
+                        <!-- Connect this to login.php after portal deployment -->
+                        <a href="#" class="portal-btn">
+                            <i class="fas fa-right-to-bracket"></i>
+                            Portal
+                        </a>
+                    </li>
+
                 </ul>
-            </div>
-            <div class="footer-section contact-info-footer">
-                <h3>Reach Out</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Sinza Afrikasana, Mabatini RD, Dar Es Salaam</p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+255787413663">+255 (787) 413 663</a></p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+255743888181">+255 (743) 888 181</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:dageschoolhairdressing@gmail.com">dageschoolhairdressing@gmail.com</a></p>
-            </div>
-            <div class="footer-section social-links">
-                <h3>Connect With Us</h3>
-                <a href="https://www.facebook.com/dagecollege.tz/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.twitter.com/dagecollege_tz/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/dagecollege_tz/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/dage_college.tz/" target="_blank" aria-label="tiktok"><i class="fab fa-tiktok"></i></a>
-            
-            </div>
+
+            </nav>
+
         </div>
-        <div class="footer-bottom">
+
+    </header>
+
+
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="contact-hero">
+
+            <div class="container hero-content">
+
+                <div class="eyebrow">
+                    <i class="fas fa-headset"></i>
+                    We're Here For You
+                </div>
+
+                <h1>
+                    Meet the
+                    <span>DAGE Team.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Whether you need information about admissions, academics,
+                    accommodation or our programmes, our team is ready to
+                    help you take the next step.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             GENERAL CONTACT INFORMATION
+        ====================================================== -->
+
+        <section class="contact-info">
+
             <div class="container">
-                <p>&copy; 2012 DAGE College. All rights reserved.</p>
-                <p>Product of ZION</p>
-                <p>by Gregory Kiliba</p>
+
+                <div class="info-grid">
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+
+                        <h3>Visit DAGE</h3>
+
+                        <p>
+                            Sinza Afrikasana,
+                            Mabatini RD,
+                            Dar Es Salaam
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+
+                        <h3>Call Our Office</h3>
+
+                        <p>
+                            <a href="tel:+255743888181">
+                                +255 (743) 888 181
+                            </a>
+                        </p>
+
+                        <p>
+                            <a href="tel:+255787413663">
+                                +255 (787) 413 663
+                            </a>
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+
+                        <h3>Email Us</h3>
+
+                        <p>
+                            <a href="mailto:dageschoolhairdressing@gmail.com">
+                                dageschoolhairdressing@gmail.com
+                            </a>
+                        </p>
+
+                    </div>
+
+                </div>
+
             </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TEAM
+        ====================================================== -->
+
+        <section class="team-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <h2>
+                        The People Behind
+                        <span>DAGE</span>
+                    </h2>
+
+                    <p>
+                        Connect directly with the members of the DAGE College
+                        team responsible for supporting our students and
+                        keeping the college moving forward.
+                    </p>
+
+                </div>
+
+
+                <div class="team-grid">
+
+
+                    <!-- PRINCIPAL -->
+
+                    <article class="team-card">
+
+                        <div class="team-image">
+                            <img
+                                src="office.jpg"
+                                alt="DAGE College Principal">
+                        </div>
+
+                        <div class="team-details">
+
+                            <span class="team-role">
+                                Principal
+                            </span>
+
+                            <h3>
+                                Madam Arafa Hashim
+                            </h3>
+
+                            <a
+                                href="tel:+255767238544"
+                                class="team-phone">
+
+                                <i class="fas fa-phone"></i>
+
+                                +255 767 238 544
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ACADEMIC -->
+
+                    <article class="team-card">
+
+                        <div class="team-image">
+                            <img
+                                src="madam lucky.jpg"
+                                alt="DAGE College Academic Officer">
+                        </div>
+
+                        <div class="team-details">
+
+                            <span class="team-role">
+                                Academic
+                            </span>
+
+                            <h3>
+                                Madam Lucky
+                            </h3>
+
+                            <a
+                                href="tel:+255715551400"
+                                class="team-phone">
+
+                                <i class="fas fa-phone"></i>
+
+                                +255 715 551 400
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ADMIN -->
+
+                    <article class="team-card">
+
+                        <div class="team-image">
+                            <img
+                                src="kenny.jpg"
+                                alt="DAGE College Administrator">
+                        </div>
+
+                        <div class="team-details">
+
+                            <span class="team-role">
+                                Administration
+                            </span>
+
+                            <h3>
+                                Kenny Moremi
+                            </h3>
+
+                            <a
+                                href="tel:+255785225337"
+                                class="team-phone">
+
+                                <i class="fas fa-phone"></i>
+
+                                +255 785 225 337
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- MATRON -->
+
+                    <article class="team-card">
+
+                        <div class="team-image">
+                            <img
+                                src="matron.jpg"
+                                alt="DAGE College Matron">
+                        </div>
+
+                        <div class="team-details">
+
+                            <span class="team-role">
+                                Matron
+                            </span>
+
+                            <h3>
+                                Benadetta
+                            </h3>
+
+                            <a
+                                href="tel:+255748230954"
+                                class="team-phone">
+
+                                <i class="fas fa-phone"></i>
+
+                                +255 748 230 954
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- OFFICE -->
+
+                    <article class="team-card">
+
+                        <div class="team-image">
+                            <img
+                                src="office.jpg"
+                                alt="DAGE College Office">
+                        </div>
+
+                        <div class="team-details">
+
+                            <span class="team-role">
+                                College Office
+                            </span>
+
+                            <h3>
+                                DAGE College Office
+                            </h3>
+
+                            <a
+                                href="tel:+255743888181"
+                                class="team-phone">
+
+                                <i class="fas fa-phone"></i>
+
+                                +255 743 888 181
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SUPERVISOR -->
+
+                    <article class="team-card">
+
+                        <div class="team-image">
+                            <img
+                                src="office.jpg"
+                                alt="DAGE College Supervisor">
+                        </div>
+
+                        <div class="team-details">
+
+                            <span class="team-role">
+                                Supervisor
+                            </span>
+
+                            <h3>
+                                Gregory Kiliba
+                            </h3>
+
+                            <a
+                                href="tel:+255784899570"
+                                class="team-phone">
+
+                                <i class="fas fa-phone"></i>
+
+                                +255 784 899 570
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="contact-cta">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+                    <h2>
+                        Ready to Join DAGE?
+                    </h2>
+
+                    <p>
+                        If you're ready to begin your journey, take the next
+                        step and send us your admission application.
+                    </p>
+
+                    <a href="join.html" class="cta-btn">
+
+                        Start Your Application
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+
+            <div class="footer-section about-footer">
+
+                <h3>DAGE</h3>
+
+                <p>
+                    The vision you get in your dream, is our goal to make
+                    sure you make it happen.
+                </p>
+
+            </div>
+
+
+            <div class="footer-section quick-links">
+
+                <h3>Explore</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="courses.html">
+                            Programs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="join.html">
+                            Admissions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="fees&funding.html">
+                            Fees
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-section contact-info-footer">
+
+                <h3>Reach Out</h3>
+
+                <p>
+                    <i class="fas fa-location-dot"></i>
+
+                    <span>
+                        Sinza Afrikasana,
+                        Mabatini RD,
+                        Dar Es Salaam
+                    </span>
+                </p>
+
+                <p>
+                    <i class="fas fa-phone"></i>
+
+                    <a href="tel:+255787413663">
+                        +255 (787) 413 663
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fas fa-phone"></i>
+
+                    <a href="tel:+255743888181">
+                        +255 (743) 888 181
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fas fa-envelope"></i>
+
+                    <a href="mailto:dageschoolhairdressing@gmail.com">
+                        dageschoolhairdressing@gmail.com
+                    </a>
+                </p>
+
+            </div>
+
+
+            <div class="footer-section social-links">
+
+                <h3>
+                    Connect With Us
+                </h3>
+
+                <a
+                    href="https://www.facebook.com/dagecollege.tz/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Facebook">
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </a>
+
+                <a
+                    href="https://www.twitter.com/dagecollege_tz/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Twitter">
+
+                    <i class="fab fa-twitter"></i>
+
+                </a>
+
+                <a
+                    href="https://www.instagram.com/dagecollege_tz/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Instagram">
+
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+                <a
+                    href="https://www.tiktok.com/dage_college.tz/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="TikTok">
+
+                    <i class="fab fa-tiktok"></i>
+
+                </a>
+
+            </div>
+
         </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    &copy; 2012 DAGE College. All rights reserved.
+                </p>
+
+                <p>
+                    Product of ZION
+                </p>
+
+                <p>
+                    By Gregory Kiliba
+                </p>
+
+            </div>
+
+        </div>
+
     </footer>
-        </header>
+
 </body>
 </html>
