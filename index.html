@@ -3,82 +3,960 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAGE COLLEGE</title>
+    <meta name="description"
+          content="DAGE College - Development Acquired in General Education. Empowering students with practical education, skills and opportunities for the future.">
+<title>DAGE College | Development Acquired in General Education</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
 
-    <header>
-        <div class="container header-content">
-            <a href="index.html" class="logo">DAGE</a>
+<!--PAGE LOADER-->
+<div class="page-loader" id="pageLoader">
+    <div class="loader-ring">
+        <span>DAGE</span>
+    </div>
+</div>
 
-            <!--hamburger icon for mobile-->
-            <button class="menu-toggle" onclick="toggleMenu()"> <i class="fas fa-bars"></i></button>
-            
-            <nav id="navbar">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="courses.html">Courses & Hostel</a></li>
-                    <li><a href="fees&funding.html">Fees & Funding</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-   
+
+<!--HEADER-->
+<header class="site-header" id="siteHeader">
+
+    <div class="header-container">
+
+        <a href="index.html" class="brand">
+            <span class="brand-mark">
+                <span>D</span>
+            </span>
+
+            <span class="brand-text">
+                <strong>DAGE</strong>
+                <small>COLLEGE</small>
+            </span>
+        </a>
+
+
+        <button class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false">
+
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+
+        <nav class="main-nav" id="mainNav">
+
+            <a href="index.html" class="nav-link active">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="about.html" class="nav-link">
+                <i class="fa-solid fa-building-columns"></i>
+                <span>About</span>
+            </a>
+
+            <a href="courses.html" class="nav-link">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Programs</span>
+            </a>
+
+            <a href="join.html" class="nav-link">
+                <i class="fa-solid fa-file-signature"></i>
+                <span>Admissions</span>
+            </a>
+
+            <a href="fees&funding.html" class="nav-link">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Fees</span>
+            </a>
+
+            <a href="contact.html" class="nav-link">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Contact</span>
+            </a>
+
+            <!-- Portal -->
+            <a href="portal.html" class="portal-nav-btn">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <span>Portal</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!--HERO-->
+<main>
+
+<section class="hero">
+
+    <div class="hero-background"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+
+
+    <div class="container hero-container">
+
+        <div class="hero-content">
+
+            <div class="hero-eyebrow">
+                <span class="eyebrow-line"></span>
+                <span>WELCOME TO DAGE COLLEGE</span>
+                <span class="eyebrow-line"></span>
+            </div>
+
+
+            <h1>
+                <span>Build Your</span>
+                <strong>Dream.</strong>
+                <span>Shape Your Future.</span>
+            </h1>
+
+
+            <p class="hero-description">
+                Development Acquired in General Education.
+                We bring you closer to your desired dreams through
+                practical education, skills and opportunities that
+                help you achieve your goals.
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a href="join.html" class="btn btn-primary">
+                    <span>Join DAGE College</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="courses.html" class="btn btn-outline">
+                    <span>Explore Programs</span>
+                </a>
+
+            </div>
+
+
+            <div class="hero-note">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>
+                    Registered by NACTVET under REG/NACTVET/0502
+                </span>
+            </div>
+
         </div>
-    </header>
-        <main>
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1>DEVELOPMENT ACQUIRED in GENERAL EDUCATION</h1>
-                <p>We bring you closer to your desired dreams. Where we educate people of different caliber on what they need to know and understand to help themselves achieve their desired goal. Our College is registered by NACTVET under the number REG/NACTVET/0502.</p>
-                
-                <a href="join.html" class="btn primary-btn pulse-btn">Join Our College Today</a>
-                
+
+
+        <!-- Hero side information -->
+        <div class="hero-side">
+
+            <div class="floating-card card-top">
+                <div class="floating-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <strong>Learn</strong>
+                    <span>Practical skills</span>
+                </div>
             </div>
-        </section>
-        </main>
-        <footer>
-        <div class="container footer-content">
-            <div class="footer-section about-footer">
-                <h3>DAGE</h3>
-                <p>The vision you get in your dream, is our goal to make sure you make it happen.</p>
+
+
+            <div class="hero-badge">
+
+                <div class="badge-ring">
+                    <div class="badge-inner">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="badge-text">
+                    <strong>DAGE</strong>
+                    <span>COLLEGE</span>
+                </div>
+
             </div>
-            <div class="footer-section quick-links">
-                <h3>Quick Nav</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="join.html">Join Now</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+
+
+            <div class="floating-card card-bottom">
+
+                <div class="floating-icon">
+                    <i class="fa-solid fa-rocket"></i>
+                </div>
+
+                <div>
+                    <strong>Grow</strong>
+                    <span>Reach your goals</span>
+                </div>
+
             </div>
-            <div class="footer-section contact-info-footer">
-                <h3>Reach Out</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Sinza Afrikasana, Mabatini RD, Dar Es Salaam</p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+255787413663">+255 (787) 413 663</a></p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+255743888181">+255 (743) 888 181</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:dageschoolhairdressing@gmail.com">dageschoolhairdressing@gmail.com</a></p>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-scroll">
+        <span>Scroll to explore</span>
+        <i class="fa-solid fa-arrow-down"></i>
+    </div>
+
+</section>
+
+
+<!--QUICK STATS-->
+<section class="stats-section">
+
+    <div class="container stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-book-open"></i>
             </div>
-            <div class="footer-section social-links">
-                <h3>Connect With Us</h3>
-                <a href="https://www.facebook.com/dagecollege.tz/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.twitter.com/dagecollege_tz/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/dagecollege_tz/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/dage_college.tz/" target="_blank" aria-label="tiktok"><i class="fab fa-tiktok"></i></a>
-            
+
+            <div>
+                <strong>Practical</strong>
+                <span>Learning</span>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2012 DAGE College. All rights reserved.</p>
-                <p>Product of ZION</p>
-                <p>by Gregory Kiliba</p>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+
+            <div>
+                <strong>Student</strong>
+                <span>Focused</span>
             </div>
         </div>
-    </footer>
-     <script src="script.js"></script>
-    </body>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+
+            <div>
+                <strong>Skills</strong>
+                <span>For the future</span>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+
+            <div>
+                <strong>Dreams</strong>
+                <span>Into reality</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--INTRODUCTION-->
+<section class="intro-section section-padding">
+
+    <div class="container intro-grid">
+
+        <div class="section-label">
+            <span>01</span>
+            <i></i>
+            <strong>WHO WE ARE</strong>
+        </div>
+
+
+        <div class="intro-content">
+
+            <h2>
+                Education that moves
+                <span>you forward.</span>
+            </h2>
+
+            <p>
+                At DAGE College, we believe education should do more
+                than fill a classroom. It should give you knowledge,
+                practical skills and the confidence to turn your
+                ambitions into something real.
+            </p>
+
+            <p>
+                Our goal is to bring students closer to their desired
+                dreams by providing an environment where learning,
+                creativity and personal development come together.
+            </p>
+
+
+            <a href="about.html" class="text-link">
+                Discover DAGE College
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="intro-visual">
+
+            <div class="visual-frame">
+
+                <img src="image1.jpg"
+                     alt="DAGE College">
+
+                <div class="visual-overlay"></div>
+
+                <div class="visual-caption">
+                    <span>THE DAGE EXPERIENCE</span>
+                    <strong>Learn. Create. Achieve.</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--PROGRAMS PREVIEW-->
+<section class="programs-section section-padding">
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <div class="section-kicker">
+                <span>02</span>
+                <i></i>
+                <strong>EXPLORE OUR PROGRAMS</strong>
+            </div>
+
+            <h2>
+                Skills that can
+                <span>take you further.</span>
+            </h2>
+
+            <p>
+                Discover practical programs designed to help you
+                develop useful skills and move confidently toward
+                your goals.
+            </p>
+
+        </div>
+
+
+        <div class="programs-grid">
+
+            <a href="courses.html" class="program-card">
+
+                <div class="program-number">01</div>
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+
+                <h3>Cosmetology</h3>
+
+                <p>
+                    Develop practical beauty, hair and personal
+                    care skills for a creative career.
+                </p>
+
+                <span class="program-link">
+                    Explore program
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </a>
+
+
+            <a href="courses.html" class="program-card featured">
+
+                <div class="program-number">02</div>
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+
+                <h3>Decor</h3>
+
+                <p>
+                    Turn creativity into practical skills in
+                    decoration, design and event presentation.
+                </p>
+
+                <span class="program-link">
+                    Explore program
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </a>
+
+
+            <a href="courses.html" class="program-card">
+
+                <div class="program-number">03</div>
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+
+                <h3>Culinary &amp; Bakery</h3>
+
+                <p>
+                    Build hands-on skills in cooking, baking,
+                    food preparation and presentation.
+                </p>
+
+                <span class="program-link">
+                    Explore program
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </a>
+
+
+            <a href="courses.html" class="program-card">
+
+                <div class="program-number">04</div>
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-computer"></i>
+                </div>
+
+                <h3>Computer</h3>
+
+                <p>
+                    Gain practical digital skills for today's
+                    technology-driven world.
+                </p>
+
+                <span class="program-link">
+                    Explore program
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="center-action">
+
+            <a href="courses.html" class="btn btn-dark">
+                View All Programs
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--WHY DAGE-->
+<section class="why-section section-padding">
+
+    <div class="container why-grid">
+
+        <div class="why-visual">
+
+            <div class="why-image-main">
+                <img src="dreams .jpg"
+                     alt="DAGE College student experience">
+            </div>
+
+            <div class="why-floating-box">
+                <i class="fa-solid fa-quote-left"></i>
+                <strong>Your dream.</strong>
+                <span>Our goal.</span>
+            </div>
+
+        </div>
+
+
+        <div class="why-content">
+
+            <div class="section-kicker">
+                <span>03</span>
+                <i></i>
+                <strong>WHY DAGE</strong>
+            </div>
+
+            <h2>
+                Your ambition deserves
+                <span>the right environment.</span>
+            </h2>
+
+            <p>
+                We want every student who walks through our doors
+                to leave with more than a certificate. We want you
+                to leave with confidence, practical knowledge and
+                the ability to pursue your goals.
+            </p>
+
+
+            <div class="benefits">
+
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+
+                    <div>
+                        <strong>Student Focus</strong>
+                        <p>
+                            An environment built around student
+                            growth and development.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+
+                    <div>
+                        <strong>Practical Skills</strong>
+                        <p>
+                            Learn skills that can be applied beyond
+                            the classroom.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <div>
+                        <strong>Personal Growth</strong>
+                        <p>
+                            Develop the confidence to build your
+                            future and pursue your dreams.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--PORTAL PROMO-->
+<section class="portal-section">
+
+    <div class="portal-glow"></div>
+
+    <div class="container portal-container">
+
+        <div class="portal-content">
+
+            <div class="portal-kicker">
+                <i class="fa-solid fa-shield-halved"></i>
+                DAGE COLLEGE DIGITAL PORTAL
+            </div>
+
+            <h2>
+                Your college.
+                <span>Your information.</span>
+                <strong>One portal.</strong>
+            </h2>
+
+            <p>
+                Students, teachers and administrators can securely
+                access their DAGE College accounts, academic
+                information and other services through the private
+                college portal.
+            </p>
+
+
+            <a href="portal.html" class="btn btn-light">
+                Enter DAGE Portal
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="portal-visual">
+
+            <div class="portal-window">
+
+                <div class="window-top">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="portal-screen">
+
+                    <div class="portal-logo-small">
+                        DAGE
+                    </div>
+
+                    <div class="portal-screen-title">
+                        <strong>College Portal</strong>
+                        <span>Secure access</span>
+                    </div>
+
+                    <div class="portal-input">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Username</span>
+                    </div>
+
+                    <div class="portal-input">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>Password</span>
+                    </div>
+
+                    <div class="portal-login">
+                        Sign In
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--ADMISSIONS CTA-->
+<section class="admission-section section-padding">
+
+    <div class="container admission-container">
+
+        <div>
+
+            <div class="section-kicker">
+                <span>04</span>
+                <i></i>
+                <strong>START YOUR JOURNEY</strong>
+            </div>
+
+            <h2>
+                Ready to turn your
+                <span>dream into a direction?</span>
+            </h2>
+
+            <p>
+                Take the next step and discover how you can become
+                part of DAGE College.
+            </p>
+
+        </div>
+
+
+        <div class="admission-actions">
+
+            <a href="join.html" class="btn btn-primary">
+                Apply / Join DAGE
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="contact.html" class="btn btn-outline-dark">
+                Talk to Us
+                <i class="fa-solid fa-phone"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!--FOOTER-->
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="brand footer-logo">
+
+                <span class="brand-mark">
+                    <span>D</span>
+                </span>
+
+                <span class="brand-text">
+                    <strong>DAGE</strong>
+                    <small>COLLEGE</small>
+                </span>
+
+            </a>
+
+            <p>
+                The vision you get in your dream is our goal
+                to make sure you make it happen.
+            </p>
+
+
+            <div class="social-links">
+
+                <a href="https://www.facebook.com/dagecollege.tz/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.twitter.com/dagecollege_tz/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="https://www.instagram.com/dagecollege_tz/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/dage_college.tz/"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Explore</h3>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About DAGE</a>
+            <a href="courses.html">Programs</a>
+            <a href="join.html">Admissions</a>
+            <a href="fees&funding.html">Fees &amp; Funding</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Student &amp; Staff</h3>
+
+            <a href="portal.html">College Portal</a>
+            <a href="courses.html">Courses</a>
+            <a href="join.html">Join DAGE</a>
+            <a href="contact.html">Contact Us</a>
+
+        </div>
+
+
+        <div class="footer-column contact-column">
+
+            <h3>Reach DAGE</h3>
+
+            <a href="https://maps.google.com/?q=Sinza+Afrikasana,+Mabatini+RD,+Dar+Es+Salaam"
+               target="_blank"
+               rel="noopener">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Sinza Afrikasana, Mabatini RD,<br>Dar Es Salaam</span>
+            </a>
+
+            <a href="tel:+255787413663">
+                <i class="fa-solid fa-phone"></i>
+                <span>+255 (787) 413 663</span>
+            </a>
+
+            <a href="tel:+255743888181">
+                <i class="fa-solid fa-phone"></i>
+                <span>+255 (743) 888 181</span>
+            </a>
+
+            <a href="mailto:dageschoolhairdressing@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+                <span>dageschoolhairdressing@gmail.com</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="container footer-bottom-inner">
+
+            <span>
+                &copy; 2012 DAGE College. All rights reserved.
+            </span>
+
+            <span>
+                Product of ZION
+            </span>
+
+            <span>
+                By Gregory Kiliba
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!--SCRIPT-->
+<script src="script.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const loader = document.getElementById("pageLoader");
+
+    setTimeout(function () {
+        if (loader) {
+            loader.classList.add("loaded");
+        }
+    }, 500);
+
+
+    const header = document.getElementById("siteHeader");
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 40) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+    });
+
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    if (menuToggle && mainNav) {
+
+        menuToggle.addEventListener("click", function () {
+
+            const open = mainNav.classList.toggle("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+
+            menuToggle.innerHTML = open
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+
+        });
+
+
+        mainNav.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                mainNav.classList.remove("open");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.innerHTML =
+                    '<i class="fa-solid fa-bars"></i>';
+
+            });
+
+        });
+
+    }
+
+
+    /* Reveal animation */
+    const revealElements = document.querySelectorAll(
+        ".stat-card, .program-card, .benefit, .intro-content, .intro-visual, .why-content, .why-visual, .admission-container"
+    );
+
+
+    const observer = new IntersectionObserver(
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("revealed");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+    revealElements.forEach(function (element) {
+
+        element.classList.add("reveal");
+
+        observer.observe(element);
+
+    });
+
+});
+
+</script>
+
+</body>
 </html>
